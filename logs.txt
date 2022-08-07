@@ -1,0 +1,22 @@
+module init
+module finish init
+PyStrIterCat_new
+StrIterCat::Py_next
+StrIterCat::next
+StrIterCat::Py_repr
+PyStrIterCat_new
+StrIterCat::Py_next
+StrIterCat::next
+StrIterCat::Py_next
+StrIterCat::next
+StrIterCat::Py_dealloc
+destroyed
+PyStrIterCat_new
+StrIterInter_new
+StrIterInter::Py_next
+StrIter::next
+StrIterInter::Py_next
+StrIter::next
+StrIterInter::Py_next
+StrIter::next
+StrIterInter::Py_dealloc

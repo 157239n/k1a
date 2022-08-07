@@ -2,10 +2,19 @@
 
 from distutils.core import setup, Extension
 
-module1 = Extension('k1a',
-                    sources=['src/demo.cpp'], language="c++", extra_compile_args=["-O3"])
+sources = [
+    'src/main.cpp',
+    'src/utils.cpp',
+    'src/funcs.cpp',
+    'src/StrIter.cpp',
+    'src/StrIterCat.cpp',
+    'src/StrIterInter.cpp',
+]
 
-with open("src/demo.cpp") as f:
+module1 = Extension('k1a', sources=sources, language="c++",
+                    extra_compile_args=["-O3"])
+
+with open("src/main.cpp") as f:
     version = [l for l in f.readlines(
     ) if "*version" in l][0].split("=")[1].strip().strip(" ").strip(";").strip("\"")
 
