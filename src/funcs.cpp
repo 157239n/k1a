@@ -34,8 +34,9 @@ PyObject *k1a_test(PyObject *self, PyObject *args) {
     if (!PyArg_ParseTuple(args, "s", &str)) return NULL;
     const std::string a = str;
     auto b = (PyStrIterCat *)PyStrIterCat_new(a);
-    return PyStrIterInter_new(b->val, [](std::string x) { return x + "|end"; });
-    // return;
+    auto f1 = [](std::string x) { return x + " |end"; };
+    auto f2 = [](std::string x) { return "begin| " + x; };
+    return b->val->transform(std::vector<transformF>{f1, f2}, true)->pyObj;
     //  return PyUnicode_FromString("def");
     //  return PyUnicode_FromString((a + "end").c_str());
 }

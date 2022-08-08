@@ -11,26 +11,28 @@ namespace k1a {
 /**
  * @brief Intermediate string iterator
  *
+ * Basically, this is a string iterator you get from transforming
+ * another StrIter object. This should not be used directly,
+ * use StrIter::transform instead.
  */
 class StrIterInter : public StrIter {
    private:
     transformF f;
-    StrIter og;
+    StrIter *og;
 
    public:
-    void init(PyObject *parent, StrIter og, transformF f);
+    StrIterInter(PyObject *pyObj, StrIter *og, transformF f);
     std::string next();
-    static PyObject *Py_next(PyObject *self);
+    ~StrIterInter();
     static void Py_dealloc(PyObject *self);
-    static PyObject *Py_repr(PyObject *self);
 };
 
 typedef struct {
     PyObject_HEAD;
-    StrIterInter val;
+    StrIterInter *val;
 } PyStrIterInter;
 
-PyObject *PyStrIterInter_new(StrIter og, transformF f);
+PyObject *PyStrIterInter_new(StrIter *og, transformF f);
 
 extern PyTypeObject PyStrIterInter_Type;
 

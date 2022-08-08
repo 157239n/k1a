@@ -24,7 +24,7 @@ void log_println(T s) {
 }
 
 void log_clear();
-
 PyObject *k1a_log_clear(PyObject *self, PyObject *args);
+std::string demangle(const char *name);
 
 }  // namespace k1a

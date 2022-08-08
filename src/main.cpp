@@ -26,8 +26,8 @@ PyMODINIT_FUNC PyInit_k1a(void) {
     Py_XINCREF(k1a::K1Error);
     PyModule_AddObject(m, "error", k1a::K1Error);
 
-    char *version = "1.1";
-    PyModule_AddObject(m, "__version__", PyUnicode_FromString(version));
+    std::string version = "1.0.2";
+    PyModule_AddObject(m, "__version__", PyUnicode_FromString(version.c_str()));
 
     Py_INCREF(&k1a::PyStrIterCat_Type);
     PyModule_AddObject(m, "str_iter", (PyObject *)&k1a::PyStrIterCat_Type);
