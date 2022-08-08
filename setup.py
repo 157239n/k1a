@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from distutils.core import setup, Extension
+import glob
 
 try:
     with open("readme.md") as f:
@@ -17,7 +18,9 @@ sources = [
     'src/StrIterInter.cpp',
 ]
 
-module1 = Extension('k1a', sources=sources, language="c++",
+sources = [*glob.glob("src/*.cpp")]
+
+module1 = Extension('k1a', sources=sources, include_dirs="src/", language="c++",
                     extra_compile_args=["-O3"])
 
 with open("src/main.cpp") as f:
