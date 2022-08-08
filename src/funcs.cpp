@@ -14,8 +14,6 @@
 
 namespace k1a {
 
-PyObject *K1Error = PyErr_NewException("k1a.error", NULL, NULL);
-
 PyObject *k1a_system(PyObject *self, PyObject *args) {
     const char *command;
     int sts;
@@ -23,7 +21,7 @@ PyObject *k1a_system(PyObject *self, PyObject *args) {
     if (!PyArg_ParseTuple(args, "s", &command)) return NULL;
     sts = system(command);
     if (sts < 0) {
-        PyErr_SetString(K1Error, "System command failed");
+        // TODO: add exception string
         return NULL;
     }
     return PyLong_FromLong(sts);

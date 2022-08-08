@@ -5,8 +5,6 @@
 
 namespace k1a {
 
-extern PyObject *K1Error;
-
 extern PyMethodDef K1aMethods[];
 
 extern struct PyModuleDef k1amodule;
