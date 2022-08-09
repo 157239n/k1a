@@ -14,6 +14,7 @@ dist
 html
 latex
 docs
+!src/docs
 
 # docs tracing related
 CMakeFiles

@@ -3,6 +3,7 @@
 #include <Python.h>
 
 #include <string>
+#include <typeinfo>
 #include <vector>
 
 #include "utils.h"

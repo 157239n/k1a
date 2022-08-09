@@ -9,23 +9,13 @@ try:
 except:
     md = ""
 
-sources = [
-    'src/main.cpp',
-    'src/utils.cpp',
-    'src/funcs.cpp',
-    'src/StrIter.cpp',
-    'src/StrIterCat.cpp',
-    'src/StrIterInter.cpp',
-]
+sources1 = [*glob.glob("src/*.cpp")]
+sources2 = [*glob.glob("src/*.cpp"), *glob.glob("src/*.h")]
 
-sources = [*glob.glob("src/*.cpp")]
-
-module1 = Extension('k1a', sources=sources, include_dirs=["src"], language="c++",
-                    extra_compile_args=["-O3"])
+module1 = Extension('k1a', sources=sources1, language="c++", extra_compile_args=["-O3"])
 
 with open("src/main.cpp") as f:
-    version = [l for l in f.readlines(
-    ) if "std::string version" in l][0].split("=")[1].strip().strip(" ").strip(";").strip("\"")
+    version = [l for l in f.readlines() if "std::string version" in l][0].split("=")[1].strip().strip(" ").strip(";").strip("\"")
 
 setup(name='k1a',
       version=version,
