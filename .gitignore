@@ -15,6 +15,7 @@ html
 latex
 docs
 !src/docs
+logs.txt
 
 # docs tracing related
 CMakeFiles

@@ -10,7 +10,6 @@ docs.py - script to generate docs and upload to https://docs.hdoc.io/157239n/k1a
 Doxyfile - docs configuration
 logs.txt - text file containing debugging print statements
 setup.py - contains setup info of the extension
-upload.sh - script to upload extension to PyPI
 
 dist/ - distributions
 docs/ - all generated docs, to be synced with NY server
