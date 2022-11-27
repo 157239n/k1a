@@ -118,16 +118,16 @@ template <class T>
 PySequenceMethods *StrIter::Py_as_sequence() {
     PySequenceMethods *answer = new PySequenceMethods();
     *answer = {
-        (lenfunc)StrIter::Py_length<T>, /* sq_length */
-        0,                              /* sq_concat */
-        0,                              /* sq_repeat */
-        0,                              /* sq_item */
-        0,                              /* sq_slice */
-        0,                              /* sq_ass_item */
-        0,                              /* sq_ass_slice */
-        0,                              /* sq_contains */
-        0,                              /* sq_inplace_concat */
-        0,                              /* sq_inplace_repeat */
+        0, /* sq_length */  // (lenfunc)StrIter::Py_length<T>
+        0,                  /* sq_concat */
+        0,                  /* sq_repeat */
+        0,                  /* sq_item */
+        0,                  /* sq_slice */
+        0,                  /* sq_ass_item */
+        0,                  /* sq_ass_slice */
+        0,                  /* sq_contains */
+        0,                  /* sq_inplace_concat */
+        0,                  /* sq_inplace_repeat */
     };
     return answer;
 }

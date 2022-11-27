@@ -22,7 +22,7 @@ PyMODINIT_FUNC PyInit_k1a(void) {
     m = PyModule_Create(&k1a::k1amodule);
     if (m == NULL) return NULL;
 
-    std::string version = "1.1";
+    std::string version = "1.2";
     PyModule_AddObject(m, "__version__", PyUnicode_FromString(version.c_str()));
 
     Py_INCREF(&k1a::PyStrIterCat_Type);
