@@ -25,7 +25,10 @@ namespace k1a {
 class StrIterCat : public StrIter {
    public:
     std::string *fileName;
-    StrIterCat(PyObject *pyObj, std::string fileName);
+    long sB;
+    long eB;
+    long seekPos;
+    StrIterCat(PyObject *pyObj, std::string fileName, long sB, long eB);
     std::string next();
     ~StrIterCat();
 

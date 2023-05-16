@@ -23,5 +23,8 @@ build("cp37-cp37m")
 build("cp38-cp38")
 build("cp39-cp39")
 build("cp310-cp310")
+build("cp311-cp311")
 
 os.system(f"rm -r output")
+
+
